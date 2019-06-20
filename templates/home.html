@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block nurl %}
+          <li class="nav-item ">
+            <a class="btn btn-success btn-sm" href=" {% url 'search' %}">Search</a>
+          </li>      
+{% endblock nurl %}          
+    
+
+{% block body %}
+
+
+
+
+      <div class="col-lg-8">
+ 
+        <div class="card my-4" >
+          <h5 class="card-header" >Details:</h5>
+          <div class="card-body">
+  
+              <div class="form-group">
+{% if status != "yes" %}
+  <p class="font-weight-bold">Try again later!!!</p>
+
+{% else %}
+
+
+               {% for key,val in obj.items  %}
+
+{% if val != '' %}
+  <p><span class="text-uppercase font-weight-bold">{{key}}</span> : <span class="text-capitalize font-weight-normal" >{{val}}</span> </p>
+  
+{% endif %}
+
+
+
+
+                 
+               {% endfor %}
+
+
+{% endif %}
+
+
+
+
+
+
+              </div>
+             
+
+          </div>
+        </div>
+
+       </div>
+
+
+{% endblock body %}
+      
+
+
+ 

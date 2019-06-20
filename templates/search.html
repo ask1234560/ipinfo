@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block nurl %}
+      <li class="nav-item">
+            <a class="btn btn-success btn-sm" href=" {% url 'home' %}">Home</a>
+          </li>       
+{% endblock nurl %}
+
+{% block body %}
+
+<div class="col-lg-8">
+
+    <!-- Search Widget -->
+        <div class="card my-4">
+          <h5 class="card-header">Search</h5>
+          <div class="card-body">
+            <div class="input-group">
+
+         <!--      <form method="POST">
+                {% csrf_token %}
+{{form.ip}}
+<br>
+  <span class="input-group-btn"> 
+                <button class="btn btn-primary" type="Submit">Go!</button>
+              </span>
+
+              </form> -->
+
+              <form method="POST">
+                {% csrf_token %}
+  <div class="form-group">
+    <label for="exampleInputEmail1">IP address</label>
+  <!--   <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"> -->
+    {{form.ip}}
+  </div>
+
+
+  <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+</form>
+
+
+   <script type="text/javascript">     
+
+window.onload=function(){
+
+var a=$("#id_ip")[0];
+a.className="form-control";
+a.placeholder="Enter ip address...";
+
+};
+
+
+   </script>           
+              <!-- <input type="text" class="form-control" placeholder="Search for..."> -->
+             
+            </div>
+          </div>
+        </div>
+</div>
+{% endblock body %}
+        
+
